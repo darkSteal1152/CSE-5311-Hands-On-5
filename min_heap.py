@@ -3,13 +3,13 @@ class MinHeap:
         self.heap = []
 
     def parent(self, i):
-        return (i - 1) // 2
+        return (i - 1) >> 2 if i > 0 else None
 
     def left(self, i):
-        return (i * 2) + 1
+        return (i << 1) + 1
 
     def right(self, i):
-        return (i * 2) + 2
+        return (i << 1) + 2
 
     def swap(self, i, j):
         temp = self.heap[i]
@@ -33,7 +33,7 @@ class MinHeap:
     def build_min_heap(self, arr):
         self.heap = arr
 
-        for i in range((len(arr) // 2) - 1, -1, -1):
+        for i in range((len(arr) >> 2) - 1, -1, -1):
             self.heapify(i)
 
     def get_root(self):
