@@ -33,7 +33,7 @@ class MinHeap:
     def build_min_heap(self, arr):
         self.heap = arr
 
-        for i in range((len(arr) >> 2) - 1, -1, -1):
+        for i in range((len(arr) >> 1) - 1, -1, -1):
             self.heapify(i)
 
     def get_root(self):
