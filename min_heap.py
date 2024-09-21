@@ -3,7 +3,7 @@ class MinHeap:
         self.heap = []
 
     def parent(self, i):
-        return (i - 1) >> 2 if i > 0 else None
+        return (i - 1) >> 1 if i > 0 else None
 
     def left(self, i):
         return (i << 1) + 1
